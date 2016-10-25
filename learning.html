@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Centralizer Demo</title>
+		
+		<!-- jquery file -->
+		<!-- online -->
+		<!--<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>-->
+		<!-- offline -->
+		<script type="text/javascript" src="source/offline_dependences/jquery-3.1.1.min.js"></script>
+		
+		<!-- jquery ui files -->
+		<!-- online -->
+		<!--<link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+		<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>-->
+		<!-- offline -->
+		<link type="text/css" rel="stylesheet" href="source/offline_dependences/jquery-ui.css" />
+		<script type="text/javascript" src="source/offline_dependences/jquery-ui.min.js"></script>
+		
+		<!-- centralizer file -->
+		<script type="text/javascript" src="source/centralizer/centralizer.js"></script>
+		
+		<!-- demo files -->
+		<link type="text/css" rel="stylesheet" href="learning.css" />
+		<script type="text/javascript" src="learning.js"></script>
+	</head>
+	<!--
+		 * Advanced Centralizer
+		 * Author: Nicholas F. Soares
+		 *
+		 * Dependences CDNS includes:
+		 * http://code.jquery.com/jquery-3.1.1.min.js
+		 * http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+		 * http://code.jquery.com/ui/1.12.1/jquery-ui.min.js
+		 * 
+		 * The MIT License (MIT)
+		 *
+		 * Copyright (c) 2016 Nicholas Figueiredo Soares
+		 * 
+		 * Permission is hereby granted, free of charge, to any person obtaining a copy of
+		 * this software and associated documentation files (the "Software"), to deal in
+		 * the Software without restriction, including without limitation the rights to
+		 * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+		 * the Software, and to permit persons to whom the Software is furnished to do so,
+		 * subject to the following conditions:
+		 * 
+		 * The above copyright notice and this permission notice shall be included in all
+		 * copies or substantial portions of the Software.
+		 * 
+		 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+		 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+		 * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+		 * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+		 * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+		 * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+	-->
+	<body>
+		<header>
+			<span id="title">Advanced Centralizer</span>
+		</header>
+		<section>
+			<article>
+				<h3>How to Install - On HEAD TAG insert this lines:</h3>
+				<br/> CDN jQuery import
+				<br/> &lsaquo;script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"&rsaquo;&lsaquo;/script&rsaquo;	
+				<br/>
+				<br/> CDN jQuery UI imports 
+				<br/> &lsaquo;link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" /&rsaquo;	
+				<br/> &lsaquo;script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"&rsaquo;&lsaquo;/script&rsaquo;
+				<br/>
+				<br/> Advanced Centralizer import
+ 				<br/> &lsaquo;script type="text/javascript" src="source/centralizer/centralizer.js"&rsaquo;	&lsaquo;/script&rsaquo;	
+			</article>
+			<article style='border:0;'>
+				<h3>1st. example: </h3>
+				<br/>THIS SECTION TAG WITH SCROLLBAR: $('section').center();
+				<br/>next examples:
+				<br/>ASIDE TAG : { id = backgroundXX, bgcolor = dark gray }
+				<br/>DIV TAG: { id = elementXX, bgcolor = blue }
+				<br/>(XX number 01, 02, 03, ...)
+			</article>
+			<article>
+				<h3>2nd. example: </h3>
+				<aside id="background01">
+					<div id="element01">1</div>
+				</aside>
+				<br/>$('#element01').center({ parentObject:$('#background01') });
+			</article>
+			<article>
+				<h3>3th. example: </h3>
+				<aside id="background02">
+					<div id="element021">2.1</div>
+					<div id="element022">2.2</div>
+				</aside>
+				<br/>$('#element021').center({	parentObject:$('#background02'), directionAlign:'horizontal' });
+				<br/>$('#element022').center({	parentObject:$('#background02'), directionAlign:'vertical' });
+			</article>
+			<article>
+				<h3>4th. example: </h3>
+				<aside id="background03">
+					<div id="element031">3.1</div>
+					<div id="element032">3.2</div>
+				</aside>
+				<br/>$('#element031').center({	parentObject:$('#background03'), directionAlign:'horizontal', delta:{ top:-20, left:-50 } });
+				<br/>$('#element032').center({	parentObject:$('#background03'), directionAlign:'vertical', delta:{ top:-50, left:-20 } });
+			</article>
+			<article>
+				<h3>5th. example: </h3>
+				<aside id="background04">
+					<div id="element041">4.1</div>
+					<div id="element042">4.2</div>
+					<div id="element043">4.3</div>
+					<div id="element044">4.4</div>
+					<div id="element045">4.5</div>
+					<div id="element046">4.6</div>
+					<div id="element047">4.7</div>
+					<div id="element048">4.8</div>
+					<div id="element049">4.9</div>
+				</aside>
+				<br/>$('#element045').center({	parentObject:$('#background04')	});
+				<br/>$('#element042').center({	parentObject:$('#background04'),	referenceObject:{	top:$('#element045')	}	});
+				<br/>$('#element044').center({	parentObject:$('#background04'),	referenceObject:{	left:$('#element045')	}	});
+				<br/>$('#element046').center({	parentObject:$('#background04'),	referenceObject:{	right:$('#element045')	}	});
+				<br/>$('#element048').center({	parentObject:$('#background04'),	referenceObject:{	bottom:$('#element045')	}	});
+				<br/>$('#element041').center({	parentObject:$('#background04'),	referenceObject:{	left:$('#element042'),	top:$('#element044')	}	});
+				<br/>$('#element043').center({	parentObject:$('#background04'),	referenceObject:{	right:$('#element042'),	top:$('#element046')	}	});
+				<br/>$('#element047').center({	parentObject:$('#background04'),	referenceObject:{	left:$('#element048'),	bottom:$('#element044')	}	});
+				<br/>$('#element049').center({	parentObject:$('#background04'),	referenceObject:{	right:$('#element048'),	ottom:$('#element046')	}	});
+			</article>
+			<article>
+				<h3>6th. example: </h3>
+				<aside id="background05">
+					<div id="element051">5.1</div>
+					<div id="element052">5.2</div>
+					<div id="element053">5.3</div>
+					<div id="element054">5.4</div>
+					<div id="element055">5.5</div>
+					<div id="element056">5.6</div>
+					<div id="element057">5.7</div>
+					<div id="element058">5.8</div>
+					<div id="element059">5.9</div>
+				</aside>
+				<br/>$('#element055').center({	parentObject:$('#background05')	});
+				<br/>$('#element052').center({	parentObject:$('#background05'), referenceObject:{ top:$('#element055') }, delta:{ top:20 } });
+				<br/>$('#element054').center({	parentObject:$('#background05'), referenceObject:{ left:$('#element055') }, delta:{ left:20 } });
+				<br/>$('#element056').center({	parentObject:$('#background05'), referenceObject:{ right:$('#element055') }, delta:{ left:20 } });
+				<br/>$('#element058').center({	parentObject:$('#background05'), referenceObject:{ bottom:$('#element055') }, delta:{ top:20 } });
+				<br/>$('#element051').center({	parentObject:$('#background05'), referenceObject:{ left:$('#element052'), top:$('#element054') },delta:{ top:20, left:20 } });
+				<br/>$('#element053').center({	parentObject:$('#background05'), referenceObject:{ right:$('#element052'), top:$('#element056') },delta:{ top:40, left:40 } });
+				<br/>$('#element057').center({	parentObject:$('#background05'), referenceObject:{ left:$('#element058'), bottom:$('#element054') },delta:{ top:10, left:10 } });
+				<br/>$('#element059').center({	parentObject:$('#background05'), referenceObject:{ right:$('#element058'), bottom:$('#element056') },delta:{ top:-40, left:-40 } });
+			</article>
+			<article>
+			<h3>7th. example: "Between Mode"</h3>
+				<aside id="background06">
+					<div id="element061">6.1</div>
+					<div id="element062">6.2</div>
+					<div id="element063">6.3</div>
+				</aside>
+				<br/>$('#element061').center({	parentObject:$('#background06'), delta:{ top:60 } });
+				<br/>$('#element062').center({	parentObject:$('#background06'), delta:{ top:-20 } });
+				<br/>$('#element063').center({	parentObject:$('#background06'), referenceObject:{ top:$('#element061'), bottom:$('#element062') } });
+			</article>
+			<article>
+			<h3>8th. example: "Between Mode"</h3>
+				<aside id="background07">
+					<div id="element071">7.1</div>
+					<div id="element072">7.2</div>
+					<div id="element073">7.3</div>
+				</aside>
+				<br/>$('#element071').center({	parentObject:$('#background07'), delta:{ left:60 } });
+				<br/>$('#element072').center({	parentObject:$('#background07'), delta:{ left:-20 } });
+				<br/>$('#element073').center({	parentObject:$('#background07'), referenceObject:{ left:$('#element071'), right:$('#element072') } });
+			</article>
+			<article>
+			<h3>9th. example: "Between Mode"</h3>
+				<aside id="background08">
+					<div id="element081">8.1</div>
+					<div id="element082">8.2</div>
+					<div id="element083">8.3</div>
+				</aside>
+				<br/>$('#element081').center({	parentObject:$('#background08'), delta:{ top:60, left:60 } });
+				<br/>$('#element082').center({	parentObject:$('#background08'), delta:{ top:-20, left:-20 } });
+				<br/>$('#element083').center({	parentObject:$('#background08'), referenceObject:{ top:$('#element081'), left:$('#element081'), bottom:$('#element082'), right:$('#element082') } });
+			</article>
+			<article>
+			<table border="1" cellpadding="0" cellspacing="0" align="center"
+			<tr>
+			<th colspan="3">Methods</th>
+			</tr>
+			<tr>
+			<th>refresh</th>
+			<th>Void</th>
+			<td>Refresh position of the element</td>
+			</tr>
+			<tr>
+			<th colspan="3">options</th>
+			</tr>
+			<tr><th>parentObject</th><th>jQuery Object</th><td>center by parent object</td></tr>
+			<tr><th>positionType</th><th>string(*)</th><td>set css position: absolute, static, fixed, relative</td></tr>
+			<tr><th>directionAlign</th><th>string(*)</th><td>center using set direction: vertical or v, horizontal or h, both</td></tr>
+			<tr><th>refreshWindowResize</th><th>boolean</th><td></td></tr>
+			<tr><th colspan="2">delta : { left : number , top : number }</th><td>move delta position from center</td></tr>
+			<tr><th colspan="2">referenceObject : { top : jQuery Object , left : jQuery Object, bottom: jQuery Object, right: jQuery Object }</th><td>use another object, for reference align.</td></tr>
+			<tr><th colspan="3">(*) not necessary case sensitive.</th></tr>
+			</table>
+			</article>
+		</section>
+		<footer>
+			<span id="credits">Copyright (c) 2016 Nicholas Figueiredo Soares - The MIT License (MIT)</span>
+		</footer>
+	</body>
+</html>

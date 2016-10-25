@@ -1,0 +1,58 @@
+body{
+	margin:0;
+	padding:0;
+}
+
+div{
+	height:50px;
+	width:50px;
+}
+
+#Background{
+	width:1280px;
+	height:768px;
+	background:#ccc;
+}
+
+#center {
+	width:800px;
+	height:600px;
+	background:#888;
+}
+
+#header,#menu{
+	background:#888;
+	color:white;
+}
+
+#header{
+	width:800px;
+	height: 20px;
+}
+
+#menu{
+	width: 20px;
+	height: 600px;
+}
+
+#alignTopLeft, #alignCenterMiddle, #alignBottomRight{
+	width:100%;
+	height: 100px;
+	background: #333;
+}
+
+#redTop, #redMiddle, #redBottom {
+	background:#f00;
+}
+
+#greenTop, #greenMiddle, #greenBottom{
+	background:#0f0;
+}
+
+#blueTop, #blueMiddle, #blueBottom{
+	background:#00f;
+}
+
+.controlPage{
+	float:right;
+}
